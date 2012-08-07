@@ -1,0 +1,151 @@
+\documentclass{beamer}
+\usetheme{Luebeck}
+\setlength{\parskip}{2.5mm}
+\title[Semi-leptonic control method\hspace{2em}\insertframenumber/
+\inserttotalframenumber]{Dilepton estimation from semi-leptonic $t \bar{t}$}
+%\title[SUSY - Top background estimation]{Dilepton estimation from semi-leptonic tt-bar control}
+%\author{\emph{Tim Brooks}, Glen Cowan, Aftab Alam}
+\author{\emph{Tim Brooks}}
+\institute{Royal Holloway University of London}
+\date{3/8/12}
+\begin{document}
+
+%\begin{frame}
+%\titlepage
+%\end{frame}
+
+\section{Search}
+\begin{frame}{Dilepton SUSY search}
+Search aims to discover Supersymmetry in the $2 lepton + E_{T}^{miss}$ channel:
+  \begin{itemize}
+    \item SUSY signals can give multi-object final states
+    \item $E_{T}^{miss}$ is a powerful discriminator for R-parity preserving models
+    \item Di-lepton signatures can identify weak gauginos and/or slepton production
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Dilepton SUSY search}
+  \begin{figure}
+    \centering
+    %\def\svgwidth{\columnwidth}
+    \includegraphics[scale=5.0]{img/susy.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Dilepton SUSY search}
+Additional jets in events also give power for hierarchies with large mass gaps.
+
+Length of hierarchy determines the number of detectable jets. Most searches looks for 2 or 3 hard jets in addition to the leptons + $E_{T}^{miss}$.
+\end{frame}
+
+\begin{frame}{Backgrounds}
+Several standard model processes produce similar multi-object states:
+
+\begin{table}
+\centering
+\begin{tabular}{l||c|c}
+                     & Real leptons               & Fake leptons         \\
+\hline \hline
+Real $\slash{E}_{T}$ & $t\bar{t}$, Diboson + jets & W + jets, Single top \\
+\hline
+Fake $\slash{E}_{T}$ & Z + jets                   & W + jets, QCD        \\
+\end{tabular}
+%\caption{This table shows some data}
+\label{tab:myfirsttable}
+\end{table}
+
+$t\bar{t}$ is normally the largest background.
+\end{frame}
+
+\section{Control sample}
+\begin{frame}{Backgrounds}
+Aim to estimate the $t\bar{t}$ contribution to the signal region.
+\end{frame}
+
+\begin{frame}{Backgrounds}
+Need to measure dilepton $t\bar{t}$ in search region. Current approaches tag dilepton $t\bar{t}$ using known properties of decay.
+
+Our approach - measure semi-leptonic $t\bar{t}$ and swap $W\rightarrow jj$ for $W\rightarrow l\nu$. Dressed 'pseudo-sample' reflects kinematic properties of dileptonic $t\bar{t}$ and can be selected with the search criteria.
+
+Only rely upon MC for a scale factor relating true dilepton $t\bar{t}$ to our pseudo-sample in the signal region.
+\end{frame}
+
+\begin{frame}{Backgrounds}
+\begin{columns}
+  \begin{column}{0.1\textwidth}
+  \end{column}
+  \begin{column}{0.8\textwidth}
+    \includegraphics[scale=5.0]{img/sl-ttbar.pdf}
+  \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Backgrounds}
+\begin{columns}
+  \begin{column}{0.1\textwidth}
+  \end{column}
+  \begin{column}{0.8\textwidth}
+    \includegraphics[scale=5.0]{img/dl-ttbar.pdf}
+  \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Control method}
+Our method outline is as follows:
+  \begin{itemize}
+    \item Capture a sample of $t \bar{t}$ in a control region consisting of 1 lepton, missing $E_{t}$ and at least 4 jets.
+    \item Reconstruct enough of each event to replace jets from hadronic W decay with lepton-neutrino pairs.
+    \item Reject events that are not compatible with $t \bar{t}$
+    \item Use resulting pseudo sample to obtain $t \bar{t}$ events in a di-lepton signal region.
+    \item Apply a scale factor from Monte Carlo to estimate the total number of events in the signal region from $t \bar{t}$.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Reconstruction}
+  In the majority of dilepton top-events, there are 4 truth partons of interest:
+  \begin{itemize}
+    \item A u-d or c-s quark pair from a top - via a W-boson: $q_{1}$,$q_{2}$.
+    \item A b quark produced in association with the hadronic W: $b_{1}$.
+    \item A b quark produced in association with the leptonic W: $b_{2}$.
+  \end{itemize}
+  Association between the truth partons of a $t \bar{t}$ event and the reco-level jets in a candidate event are described by a map: $\left(q1:a, q2:b, b1:c, b2:d\right)$.
+
+  For 4 jets there are 24-unique mappings. The number of maps does not grow as the factorial of the number of jets, since we only consider those that are unique in their first 4 assignments.
+\end{frame}
+
+\begin{frame}{Reconstruction}
+Select $t\bar{t}$ using a $\chi^2$ with knowledge of the top system-
+
+\begin{equation}\begin{split}
+  \chi^2 &= \frac{\left(M_{ab} - M_W\right)^2}{\sigma^2_{M_{W_h}}} + \frac{\left(M_{abc} - M_t\right)^2}{\sigma^2_{M_{t_h}}} + \frac{\left(M_{dl\nu} - M_t\right)^2}{\sigma^2_{M_{t_l}}} \\
+  &-2\ln{\frac{L_{W}\left( \omega_{a},\omega_{b} \right)}{f^{\text{max}}_{\omega_a} f^{\text{max}}_{\omega_b}}} -2\ln{\frac{f\left(\omega_{c} \big| b\right)}{f^{\text{max}}_{\omega_{c}}}} -2\ln{\frac{f\left(\omega_{d} \big| b\right)}{f^{\text{max}}_{\omega_{d}}}}
+\end{split}\end{equation}
+With $f^{\text{max}}_j = \max\left[f\left(\omega_{j} \big| l\right), f\left(\omega_{j} \big| l\right), f\left(\omega_{j} \big| l\right)\right]$
+
+$f\left( \omega_{j} \big| f\right)$ is a Kernal Density Estimator parameterising the b-tagger response to flavour $f$ evaluated with the weight from jet $j$.
+\end{frame}
+
+\begin{frame}
+After selecting the lowest $\chi^2$ map; form a probability of correct assignment. The likelihood for a map being correct is:
+  \begin{equation}\begin{split}
+    L\left(a,b,c,d\right) =&
+    \frac{1}{\sqrt{2\pi}\sigma_{W_{h}}} \exp^{-\left(m_{ab}-M_{W}\right)^{2} / 2\sigma^{2}_{W_{h}}}
+    \frac{1}{\sqrt{2\pi}\sigma_{t_{h}}} \exp^{-\left(m_{abc}-m_{t}\right)^{2} / 2\sigma^{2}_{t_{h}}}
+    \\&\times
+    \frac{1}{\sqrt{2\pi}\sigma_{W_{l}}} \exp^{-\left(m_{dl\nu}-m_{t}\right)^{2} / 2\sigma^{2}_{t_{l}}}
+    \\&\times
+    L_{W}\left(\omega_{a},\omega_{b}\right) L_{bb}\left(\omega_{c},\omega_{d}\right)
+  \end{split}\end{equation}
+But we may sum all likelihoods where jets $a$ \& $b$ are assigned to the hadronic W.
+\begin{equation}
+P_{CA} = \frac{L\left(a,b,c,d\right) + L\left(a,b,d,c\right) + L\left(b,a,c,d\right) + L\left(b,a,d,c\right)}{\sum_{\text{all maps}} L\left(\text{map}\right)}
+\end{equation}
+\end{frame}
+
+\begin{frame}{TODO}
+  \begin{itemize}
+    \item 
+  \end{itemize}
+\end{frame}
+
+\end{document}
