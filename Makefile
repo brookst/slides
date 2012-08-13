@@ -24,6 +24,7 @@ $(pdffile).pdf: $(latexfile).aux
 	grep -q "Rerun to get cross" $(latexfile).log ) do true ; \
         done
 	mv $(latexfile).pdf $(pdffile).pdf
+	$(MAKE) tmpclean
 
 $(latexfile).aux: $(img) $(latexfile).tex
 	$(TEX) $(latexfile)
@@ -39,10 +40,15 @@ $(img_dir):
 
 images: $(img)
 
-clean:
-	rm -f $(latexfile).lof $(latexfile).lot $(latexfile).log $(latexfile).nav $(latexfile).out $(latexfile).snm $(latexfile).toc
+clean: tmpclean
 	rm -f $(latexfile).aux
 	rm -f $(pdffile).pdf
+
+tmpclean: logclean
+	rm -f $(latexfile).nav $(latexfile).out $(latexfile).snm $(latexfile).toc
+
+logclean:
+	rm -f $(latexfile).log
 
 imgclean:
 	rm -f $(img)
