@@ -1,0 +1,16 @@
+# Temp files
+*.aux
+*.nav
+*.snm
+*.toc
+*.out
+
+# Log files
+*.log
+
+# Finished output
+img
+*.pdf
+
+
+trash
