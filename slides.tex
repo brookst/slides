@@ -5,11 +5,11 @@
 \usetheme{Luebeck}
 \setbeamertemplate{navigation symbols}{}
 \setlength{\parskip}{2.5mm}
-\title[Dilepton $t \bar{t}$ estimation\hspace{14em}\insertframenumber/5]{Di-lepton $t \bar{t}$ estimation from \\ Semi-leptonic $t \bar{t}$ in SUSY searches}
+\title[Dilepton $t \bar{t}$ estimation\hspace{14em}\insertframenumber/9]{Di-lepton $t \bar{t}$ estimation from \\ Semi-leptonic $t \bar{t}$ in SUSY searches}
 %\author{\emph{Tim Brooks}, Glen Cowan, Aftab Alam}
 \author{\emph{Tim Brooks}, Glen Cowan}
 \institute{Royal Holloway University of London}
-\date{28/8/12}
+\date{12/4/13}
 \begin{document}
 
 \begin{frame}
@@ -160,48 +160,106 @@ Estimate yeilds at $25\text{fb}^{-1}$ (though still at $7 \text{TeV}$)
   \end{columns}
 \end{frame}
 
-\begin{frame}{2 jet + Missing ET selection}
-  \begin{columns}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{$e^{\pm}\mu^{\mp}\slashed{E}_{T}$}
-      \includegraphics[scale=0.275]{img/Total_OS_EM_etmiss_2jet.pdf}
-    \end{figure}\end{column}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{$\mu^{\pm}e^{\mp}\slashed{E}_{T}$}
-      \includegraphics[scale=0.275]{img/Total_OS_ME_etmiss_2jet.pdf}
-    \end{figure}\end{column}
-  \end{columns}
+% \begin{frame}{2 jet + Missing ET selection}
+%   \begin{columns}
+%     \begin{column}{0.45\textwidth}\begin{figure}
+%       \caption{$e^{\pm}\mu^{\mp}\slashed{E}_{T}$}
+%       \includegraphics[scale=0.275]{img/Total_OS_EM_etmiss_2jet.pdf}
+%     \end{figure}\end{column}
+%     \begin{column}{0.45\textwidth}\begin{figure}
+%       \caption{$\mu^{\pm}e^{\mp}\slashed{E}_{T}$}
+%       \includegraphics[scale=0.275]{img/Total_OS_ME_etmiss_2jet.pdf}
+%     \end{figure}\end{column}
+%   \end{columns}
+% \end{frame}
+
+% \begin{frame}{Estimates}
+% \begin{table}
+% \centering
+% \begin{tabular}{c||r|r}
+%                      & $e^+e^- $ & $\mu^+\mu^-$ \\
+% \hline \hline
+% W+Jets    & $0.0$         & $0.0$ \\
+% Z+Jets    & $4.9\pm3.5$   & $5.9\pm4.2$ \\
+% DiBoson   & $29.8\pm6.9$  & $34.5\pm$ \\
+% MC Top    & $55.4\pm17.5$ & $131.2\pm$ \\
+% 4jet mock & $52.0\pm8.3$  & $143.7\pm18.6$ \\
+% \hline
+% MC Total  & $90.1\pm19.2$ & $171.6\pm28.0$ \\
+% Mock Total& $86.7\pm11.4$ & $184.0\pm20.2$ \\
+% \hline
+% SU4x0.1   & $30.5\pm21.6$ & $103.0\pm39.0$ \\
+% \hline
+% \end{tabular}
+% %\caption{This table shows some data}
+% \label{tab:myfirsttable}
+% \end{table}
+% \end{frame}
+
+\begin{frame}{MC12 - Data12\_8TeV update}
+\begin{itemize}
+    \item Pileup weighting tool not working with data12 distributions
+    \item $\slashed{E}_{T}$ source changed and $sin(\Delta\phi)$ dependance added
+    \item Lowest unprescaled single electron Trigger now EF\_24vhi\_medium1
+\end{itemize}
 \end{frame}
 
-\begin{frame}{Estimates}
-\begin{table}
-\centering
-\begin{tabular}{c||r|r}
-                     & $e^+e^- $ & $\mu^+\mu^-$ \\
-\hline \hline
-W+Jets    & $0.0$         & $0.0$ \\
-Z+Jets    & $4.9\pm3.5$   & $5.9\pm4.2$ \\
-DiBoson   & $29.8\pm6.9$  & $34.5\pm$ \\
-MC Top    & $55.4\pm17.5$ & $131.2\pm$ \\
-4jet mock & $52.0\pm8.3$  & $143.7\pm18.6$ \\
-\hline
-MC Total  & $90.1\pm19.2$ & $171.6\pm28.0$ \\
-Mock Total& $86.7\pm11.4$ & $184.0\pm20.2$ \\
-\hline
-SU4x0.1   & $30.5\pm21.6$ & $103.0\pm39.0$ \\
-\hline
-\end{tabular}
-%\caption{This table shows some data}
-\label{tab:myfirsttable}
-\end{table}
+\begin{frame}{Reconstruction}
+Select $t\bar{t}$ using a $\chi^2$ with knowledge of the top system-
+
+\begin{equation}\begin{split}
+  \chi^2 &= \frac{\left(M_{ab} - M_W\right)^2}{\sigma^2_{M_{W_h}}} + \frac{\left(M_{abc} - M_t\right)^2}{\sigma^2_{M_{t_h}}} + \frac{\left(M_{dl\nu} - M_t\right)^2}{\sigma^2_{M_{t_l}}} \\
+  &-2\ln{\frac{L_{W}\left( \omega_{a},\omega_{b} \right)}{f^{\text{max}}_{a} f^{\text{max}}_{b}}} -2\ln{\frac{f\left(\omega_{c} \big| b\right)}{f^{\text{max}}_{c}}} -2\ln{\frac{f\left(\omega_{d} \big| b\right)}{f^{\text{max}}_{d}}}
+\end{split}\end{equation}
+With $f^{\text{max}}_j = \max\left[f\left(\omega_{j} \big| l\right), f\left(\omega_{j} \big| c\right), f\left(\omega_{j} \big| b\right)\right]$
+
+$f\left( \omega_{j} \big| F\right)$ is a Kernal Density Estimator parameterising the b-tagger response to flavour $F$ evaluated with the weight from jet $j$.
+\end{frame}
+
+\begin{frame}{Significance measure}
+Optimise $\chi^2$ cut using discovery significance.
+
+Search consists of two measurements, $n$ events pass search region cuts, $m$ events enter control region.
+
+Model parameters as Poisson variables with expectations;
+\begin{eqnarray}
+    E[n] = s^{SR} + b_{t\bar{t}} + b_{other}^{SR} \\
+    E[m] = \tau b_{t\bar{t}} + b_{other}^{CR} + s^{CR}
+\end{eqnarray}
+
+Model $log(\tau)$ as gaussian distributed with statistical error.
+\end{frame}
+
+\begin{frame}
+    Let $\beta = log\left(\tau\right)$,
+    
+    $\Delta = log\left(\Delta\right)$,
+\begin{equation}
+\begin{split}
+    -log(L) = -n log\left(b_{t\bar{t}} + b_{other}^{SR}\right) - \left(b_{t\bar{t}} + b_{other}^{SR}\right) - log\left(n!\right) \\
+              -m log\left(\tau b_{t\bar{t}} + b_{other}^{CR}\right) - \left(\tau b_{t\bar{t}} + b_{other}^{CR}\right) - log\left(m!\right) \\
+              -log \sigma_{\beta} - \frac{\left(\beta - \tilde{\beta}\right)}{2 \sigma_{\beta}^{2}}
+              -log \sigma_{\Delta} - \frac{\left(\Delta - \tilde{\Delta}\right)}{2 \sigma_{\Delta}^{2}}
+\end{split}
+\end{equation}
+Minimise $-log(L)$ and compute;
+\begin{equation}
+    q_0 = -2 log\left(\frac{L(\mu=0)}{L}\right)
+\end{equation}
+with significance simply $sqrt\left(q_0\right)$
+\end{frame}
+
+\begin{frame}{Cut optimisation}
+    \begin{figure}
+      %\caption{Significance vs cut on $\chi^2$}
+      \includegraphics[scale=0.275]{img/sigcomp.png}
+    \end{figure}
 \end{frame}
 
 \begin{frame}{Further work}
   \begin{itemize}
-    \item Optimise cuts on $\chi^2$ and correct assignment probabilities.
-    \item Futher develop $1\text{l}+5\text{j}$ control for $2\text{l}+3\text{j}$ search.
-    \item Run through full statistical analysis of technique.
-    \item Update to latest release/prescriptions for $8\text{TeV}$ analysis.
+    \item Finish update to latest release/prescriptions for $8\text{TeV}$ analysis.
+    \item Test procedure over range of SUSY models
   \end{itemize}
 \end{frame}
 
@@ -311,18 +369,6 @@ SU4x0.1   & $30.5\pm21.6$ & $103.0\pm39.0$ \\
       \includegraphics[scale=0.275]{img/Total_OS_MM_jet_lead2_pt_scaled.pdf}
     \end{figure}\end{column}
   \end{columns}
-\end{frame}
-
-\begin{frame}{Reconstruction}
-Select $t\bar{t}$ using a $\chi^2$ with knowledge of the top system-
-
-\begin{equation}\begin{split}
-  \chi^2 &= \frac{\left(M_{ab} - M_W\right)^2}{\sigma^2_{M_{W_h}}} + \frac{\left(M_{abc} - M_t\right)^2}{\sigma^2_{M_{t_h}}} + \frac{\left(M_{dl\nu} - M_t\right)^2}{\sigma^2_{M_{t_l}}} \\
-  &-2\ln{\frac{L_{W}\left( \omega_{a},\omega_{b} \right)}{f^{\text{max}}_{a} f^{\text{max}}_{b}}} -2\ln{\frac{f\left(\omega_{c} \big| b\right)}{f^{\text{max}}_{c}}} -2\ln{\frac{f\left(\omega_{d} \big| b\right)}{f^{\text{max}}_{d}}}
-\end{split}\end{equation}
-With $f^{\text{max}}_j = \max\left[f\left(\omega_{j} \big| l\right), f\left(\omega_{j} \big| c\right), f\left(\omega_{j} \big| b\right)\right]$
-
-$f\left( \omega_{j} \big| F\right)$ is a Kernal Density Estimator parameterising the b-tagger response to flavour $F$ evaluated with the weight from jet $j$.
 \end{frame}
 
 \begin{frame}{KDE parameterisation}
