@@ -2,45 +2,49 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{slashed}
+\usepackage{tikz}
 \usetheme{Luebeck}
 \setbeamertemplate{navigation symbols}{}
 \setlength{\parskip}{2.5mm}
-\title[Dilepton $t \bar{t}$ estimation\hspace{14em}\insertframenumber/9]{Di-lepton $t \bar{t}$ estimation from \\ Semi-leptonic $t \bar{t}$ in SUSY searches}
+\title[Searching for Dilepton SUSY with $t\bar{t}$ backgrounds\hspace{2.5em}\insertframenumber/18]{Searching for Supersymmetry in the Dilepton channel with large top quark backgrounds} %with $t \bar{t}$ background estimation\hspace{14em}\insertframenumber/17]{Di-lepton $t \bar{t}$ estimation from \\ Semi-leptonic $t \bar{t}$}
 %\author{\emph{Tim Brooks}, Glen Cowan, Aftab Alam}
 \author{\emph{Tim Brooks}, Glen Cowan}
 \institute{Royal Holloway University of London}
-\date{12/4/13}
+\date{17/4/13}
 \begin{document}
 
 \begin{frame}
 \titlepage
 \end{frame}
 
-%\section{Search}
-%\begin{frame}{Dilepton SUSY search}
-%Search for Supersymmetry in the $2 \text{lepton} + E_{T}^{\text{miss}} + \text{jets}$ channel:
-%  \begin{itemize}
-%    \item SUSY signals can give multi-object final states
-%    \item $E_{T}^{miss}$ is a powerful discriminator for R-parity preserving models
-%    \item Di-lepton signatures can identify weak gaugino and/or slepton production
-%  \end{itemize}
-%\end{frame}
+\section{Search}
+\begin{frame}{Search for Supersymmetry}
+  \begin{itemize}
+    \item Supersymmetry predicts new particles accessable in high energy proton-proton collisions such as at the LHC
+    \item SUSY particle decays can give final states with leptons jets and missing energy
+    \item $E_{T}^{miss}$ is a powerful discriminator for R-parity preserving SUSY models
+    \item A Di-lepton selection is powerful in detecting a class of models with weak gaugino and/or slepton production
+  \end{itemize}
+$\Rightarrow$ Search for Supersymmetry in the $2 \text{lepton} + E_{T}^{\text{miss}} + \text{jets}$ channel.
+\end{frame}
 
-%\begin{frame}{Dilepton SUSY search}
-%  \begin{figure}
-%    \centering
-%    %\def\svgwidth{\columnwidth}
-%    \includegraphics[scale=5.0]{img/susy.pdf}
-%  \end{figure}
-%\end{frame}
+\begin{frame}{Dilepton SUSY event}
+  \begin{figure}
+    \centering
+    %\def\svgwidth{\columnwidth}
+    \includegraphics[scale=5.0]{img/susy.pdf}
+  \end{figure}
+\end{frame}
 
-%\begin{frame}{Dilepton SUSY search}
-%Additional jets in events also give power for hierarchies with large mass gaps.
-%
-%Length of hierarchy determines the number of detectable jets. Most searches looks for 2 or 3 hard jets in addition to the leptons + $E_{T}^{miss}$.
-%
-%The largest background to these searches is usually $t\bar{t}$.
-%\end{frame}
+\begin{frame}{Dilepton SUSY search}
+\begin{itemize}
+    \item Additional jets in events also give power when decay cascades have large mass gaps between SUSY particles
+
+    \item Length of cascade determines the number of jets. Most searches looks for 2 or 3 hard jets in addition to the leptons + $E_{T}^{miss}$.
+
+    \item The largest background to these searches is usually top pair production, $t\bar{t}$.
+\end{itemize}
+\end{frame}
 
 %\begin{frame}{Backgrounds}
 %Several standard model processes produce similar multi-object states:
@@ -61,52 +65,179 @@
 %$t\bar{t}$ is normally the largest background.
 %\end{frame}
 
-%\section{Control sample}
+\section{Control sample}
 
-%\begin{frame}{Backgrounds}
-%Need to measure dilepton $t\bar{t}$ in search region. Current approaches tag dilepton $t\bar{t}$ using known properties of decay.
-%
-%Our approach - measure semi-leptonic $t\bar{t}$ and swap $W\rightarrow jj$ for $W\rightarrow l\nu$. Dressed 'pseudo-sample' reflects kinematic properties of dileptonic $t\bar{t}$ and may be selected with the search criteria.
-%
-%Only rely upon MC for a scale factor relating true dilepton $t\bar{t}$ to our pseudo-sample in the signal region.
-%\end{frame}
+\begin{frame}{Dileptonic $t\bar{t}$}
+  \begin{figure}
+    \centering
+    Production and decay of $t\bar{t}$ via b-jets and leptonically decaying W-bosons.
+    \includegraphics[scale=8.0]{img/dl-ttbar.pdf}
+  \end{figure}
+\end{frame}
 
-%\begin{frame}{Backgrounds}
-%  \begin{figure}
-%    \centering
-%    \includegraphics[scale=6.0]{img/sl-ttbar.pdf}
-%  \end{figure}
-%\end{frame}
+\begin{frame}{Backgrounds}
+Need to estimate dilepton $t\bar{t}$ in search region. Monte Carlo techniques are limited by theoretical uncertainty. Current approaches tag dilepton $t\bar{t}$ in data using known properties of decay.
 
-%\begin{frame}{Backgrounds}
-%  \begin{figure}
-%    \centering
-%    \includegraphics[scale=6.0]{img/dl-ttbar.pdf}
-%  \end{figure}
-%\end{frame}
+Our approach - measure $t\bar{t}$ in the semi-leptonic channel and swap $W\rightarrow jj$ for $W\rightarrow l\nu$. Dressed control sample reflects kinematic properties of dileptonic $t\bar{t}$ and may be selected with the search criteria.
 
-%\begin{frame}{Control method}
-%Our method outline is as follows:
-%  \begin{itemize}
-%    \item Capture a sample of $t \bar{t}$ in a control region consisting of 1 lepton, missing $E_{t}$ and at least 4 jets.
-%    \item Reconstruct enough of each event to replace jets from hadronic W decay with lepton-neutrino pairs.
-%    \item Reject events that are not compatible with $t \bar{t}$
-%    \item Use resulting pseudo sample to obtain $t \bar{t}$ events in a di-lepton signal region.
-%    \item Apply a scale factor from Monte Carlo to estimate the total number of events in the signal region from $t \bar{t}$.
-%  \end{itemize}
-%\end{frame}
+Only rely upon MC for a scale factor, $\tau$, relating true dilepton $t\bar{t}$ to our control sample in the signal region.
+\end{frame}
 
-%\begin{frame}{Reconstruction}
-%  In the majority of dilepton top-events, there are 4 truth partons of interest:
-%  \begin{itemize}
-%    \item A u-d or c-s quark pair from a top - via a W-boson: $q_{1}$,$q_{2}$.
-%    \item A b quark produced in association with the hadronic W: $b_{1}$.
-%    \item A b quark produced in association with the leptonic W: $b_{2}$.
-%  \end{itemize}
-%  Association between the truth partons of a $t \bar{t}$ event and the reco-level jets in a candidate event are described by a map: $\left(q1:a, q2:b, b1:c, b2:d\right)$.
-%
-%  For 4 jets there are 24-unique mappings. The number of maps does not grow as the factorial of the number of jets, since we only consider those that are unique in their first 4 assignments.
-%\end{frame}
+\begin{frame}{Semileptonic $t\bar{t}$}
+  \begin{figure}
+    \centering
+    More commonly, one W-boson decays hadronically.
+    \includegraphics[scale=6.0]{img/sl-ttbar.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Control method}
+Our method outline is as follows:
+  \begin{itemize}
+    \item Select a sample of $t \bar{t}$ by selecting events with 1 lepton, missing $E_{t}$ and at least 4 jets.
+    \item Reconstruct each event to replace jets from hadronic W decay with a simulated lepton-neutrino pair.
+    \item Accept events that are compatible with well reconstructed $t \bar{t}$
+    \item Use resulting sample to predict dilepton $t \bar{t}$ events passing signal selection.
+    \item Apply a scale factor from Monte Carlo to estimate the total number of events in the signal region from $t \bar{t}$.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Reconstruction}
+  \begin{figure}
+    \centering
+    %\def\svgwidth{\columnwidth}
+    \includegraphics[scale=0.3]{img/drawing.pdf}
+  \end{figure}
+  Association between the truth partons of a $t \bar{t}$ event and the reco-level jets in a candidate event are described by a map: $\left(q1:a, q2:b, b1:c, b2:d\right)$.
+
+  For 4 jets there are 24-unique mappings. To reconstruct the neutrino momenta, we use constraints of the $t \bar{t}$ system. This gives a sign ambiguity leading to 48 combinations.%The number of maps does not grow as the factorial of the number of jets, since we only consider those that are unique in their first 4 assignments.
+\end{frame}
+
+% \begin{frame}{Reconstruction}
+%   In the majority of dilepton top-events, there are 4 truth partons of interest:
+%   \begin{itemize}
+%     \item A u-d or c-s quark pair from a top - via a W-boson: $q_{1}$,$q_{2}$.
+%     \item A b quark produced in association with the hadronic W: $b_{1}$.
+%     \item A b quark produced in association with the leptonic W: $b_{2}$.
+%   \end{itemize}
+%   Association between the truth partons of a $t \bar{t}$ event and the reco-level jets in a candidate event are described by a map: $\left(q1:a, q2:b, b1:c, b2:d\right)$.
+
+%   For 4 jets there are 24-unique mappings. To reconstruct the neutrino momenta, we use constraints of the $t \bar{t}$ system. This gives a sign ambiguity leading to 48 combinations.%The number of maps does not grow as the factorial of the number of jets, since we only consider those that are unique in their first 4 assignments.
+% \end{frame}
+
+\begin{frame}{Reconstruction}
+Select $t\bar{t}$ using a $\chi^2$ with knowledge of the top system-
+
+\begin{equation*}\begin{split}
+  \chi^2 &= \frac{\left(M_{ab} - M_W\right)^2}{\sigma^2_{M_{W_h}}} + \frac{\left(M_{abc} - M_t\right)^2}{\sigma^2_{M_{t_h}}} + \frac{\left(M_{dl\nu} - M_t\right)^2}{\sigma^2_{M_{t_l}}} \\
+  &-2\ln{\frac{L_{W}\left( \omega_{a},\omega_{b} \right)}{f^{\text{max}}_{a} f^{\text{max}}_{b}}} -2\ln{\frac{f\left(\omega_{c} \big| b\right)}{f^{\text{max}}_{c}}} -2\ln{\frac{f\left(\omega_{d} \big| b\right)}{f^{\text{max}}_{d}}}
+\end{split}\end{equation*}
+With $f^{\text{max}}_j = \max\left[f\left(\omega_{j} \big| l\right), f\left(\omega_{j} \big| c\right), f\left(\omega_{j} \big| b\right)\right]$
+
+$f\left( \omega_{j} \big| F\right)$ is a Kernal Density Estimator parameterising the b-tagger response to flavour $F$ evaluated with the weight from jet $j$.
+\end{frame}
+
+\begin{frame}{KDE parameterisation}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}\begin{figure}
+      % \caption{b-tag distributions}
+      \centering
+      \includegraphics[scale=0.3]{img/tagging.pdf}
+      % Classifier output
+    \end{figure}\end{column}
+    \begin{column}{0.5\textwidth}\begin{figure}
+        % KDEs parameterise b-jet response
+    %   % \caption{b-tag distributions}
+       \includegraphics[scale=0.3]{img/jets.pdf}
+    \end{figure}\end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Total Chisquare distribution}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}\begin{figure}
+      \includegraphics[scale=0.325]{img/Total__min_chi_all_all4.pdf}
+      % \caption{$\chi^2$ = $\chi^2_{kinematic} + \chi^2_{B}$}
+    \end{figure}\end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}%{Significance measure}
+Two measurements from data; events in signal selection, $n$ and events in control selection, $m$.
+
+Model measurements as Poisson distributed with expectations;
+\begin{eqnarray*}
+    E[n] = \mu s + b_{t\bar{t}} + b_{o}^{SR} \\*[0.2 cm]
+    E[m] = \mu s' + \tau b_{t\bar{t}} + b_{o}^{CR}
+\end{eqnarray*} \\
+% with signal strength parameter, $\mu$,
+
+%     events from signal process in signal selection, $s$ and in control selection, $s'$
+
+%     events from $t\bar{t}$ background in signal selection, $b_{t\bar{t}}$ and signal-control ratio, $\tau$
+
+%     events from other backgrounds in signal selection, $b_{o}^{SR}$ and signal-control ratio, $b_{o}^{CR}$
+where; \\
+ \begin{tabular}{r l}
+     $\mu$ & signal strength parameter \\
+     $s$ & predicted signal events in signal region \\
+     $b_{t\bar{t}}$ & $t\bar{t}$ background events in signal region \\
+     $b_{o}^{SR}$ & predicted events from other backgrounds in signal region \\
+     $s'$ & predicted signal events in control region \\
+     $\tau$ & ratio of $t\bar{t}$ events in signal region to control region \\
+     $b_{o}^{CR}$ & events from other backgrounds in control region
+ \end{tabular}
+
+\end{frame}
+
+\begin{frame}
+With $\zeta = log\left(\tau\right)$, $\beta_{o} = log\left(b_{o}^{CR}\right)$, and the predicted values $\tilde{\zeta}$, $\tilde{\beta_{o}}$;
+% With predicted $\tau$, $\tilde{\tau}$ and predicted $b_{o}^{CR}$, $\tilde{b_{o}^{CR}}$;
+\begin{equation*}
+\begin{split}
+    L\left(\mu, b_{t\bar{t}}^{SR}, \tau, b_{o}^{CR}\right) = &\frac{\left(\mu s + b_{t\bar{t}} + b_{o}^{SR}\right)^n}{n!} e^{-\left(\mu s + b_{t\bar{t}} + b_{o}^{SR}\right)} \\
+        &\frac{\left(\mu s' + \tau b_{t\bar{t}} + b_{o}^{CR}\right)}{m!} e^{\left(\mu s' + \tau b_{t\bar{t}} + b_{o}^{CR}\right)} \\
+    % \frac{1}{\sqrt{2\pi} \sigma_{\zeta}}
+        &\text{Gaus}\left(\tilde{\zeta};\zeta, \sigma_{\zeta}\right)
+        \text{Gaus}\left(\tilde{\beta_{o}};\beta_{o}, \sigma_{\beta_{o}}\right)
+              % -log \sigma_{\zeta} - \frac{\left(\zeta - \tilde{\zeta}\right)}{2 \sigma_{\zeta}^{2}}
+              % -log \sigma_{\beta_{o}} - \frac{\left(\beta_{o} - \tilde{\beta_{o}}\right)}{2 \sigma_{\beta_{o}}^{2}}
+\end{split}
+\end{equation*}
+% Model $log(\tau)$ as gaussian distributed with statistical error.
+\end{frame}
+
+\begin{frame}
+Using the ATLAS standard Profile Likelihood method, we define the profile likelihood ratio;
+
+\begin{equation*}
+    \lambda\left(\mu\right) = \frac{L\left(\mu, \hat{\hat{\theta}}\right)}{L\left(\hat{\mu}, \hat{\theta}\right)}
+\end{equation*}
+
+with $\theta = \left[b_{tt}, \tau, b_{o}\right]$ and hat indicating the values are set so as to maximise the likelihood. This is the compatibility of the result ($n$, $m$), with the given value of $\mu$.
+
+Test compatibility with background only hypothesis, $\mu = 0$ with statistic $q_{0}$
+\begin{equation*}
+    q_0 =
+    \begin{cases}
+        -2 log\lambda\left(0\right), & \text{if} \hat{\mu} > 0 \\
+        0, & \text{otherwise}
+    \end{cases}
+\end{equation*}
+significance, $Z = \sqrt{q_0}$.
+\end{frame}
+
+\begin{frame}{Cut optimisation}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}\begin{figure}
+      \includegraphics[scale=0.325]{img/sigcomp.pdf}
+    \end{figure}\end{column}
+    % \begin{column}{0.5\textwidth}\begin{figure}
+    %   \includegraphics[scale=0.325]{img/Total__min_chi_all_all4.pdf}
+    %   \caption{$\chi^2$ = $\chi^2_{kinematic} + \chi^2_{B}$}
+    % \end{figure}\end{column}
+  \end{columns}
+\end{frame}
 
 %\begin{frame}
 %Using the $\chi^2$ as a descriminate alone gives $t\bar{t}$ purity $\approx80\%$ in $t\bar{t}$ samples where all decay products are reconstructed.
@@ -144,18 +275,18 @@ Test technique with loose SUSY selection:
 \item 2 jets, each with $p_T > 50\text{GeV}$
 \item Missing $E_T > 220\text{GeV}$
 \end{itemize}
-Estimate yeilds at $25\text{fb}^{-1}$ (though still at $7 \text{TeV}$)
+Estimate yields at $25\text{fb}^{-1}$ (though still at $7 \text{TeV}$)
 \end{frame}
 
 \begin{frame}{2 jet + Missing ET selection}
   \begin{columns}
-    \begin{column}{0.45\textwidth}\begin{figure}
+    \begin{column}{0.5\textwidth}\begin{figure}
+      \includegraphics[scale=0.325]{img/Total_OS_EE_etmiss_2jet.pdf}
       \caption{$e^{+}e^{-}\slashed{E}_{T}$}
-      \includegraphics[scale=0.275]{img/Total_OS_EE_etmiss_2jet.pdf}
     \end{figure}\end{column}
-    \begin{column}{0.45\textwidth}\begin{figure}
+    \begin{column}{0.5\textwidth}\begin{figure}
+      \includegraphics[scale=0.325]{img/Total_OS_MM_etmiss_2jet.pdf}
       \caption{$\mu^{+}\mu^{-}\slashed{E}_{T}$}
-      \includegraphics[scale=0.275]{img/Total_OS_MM_etmiss_2jet.pdf}
     \end{figure}\end{column}
   \end{columns}
 \end{frame}
@@ -196,214 +327,140 @@ Estimate yeilds at $25\text{fb}^{-1}$ (though still at $7 \text{TeV}$)
 % \end{table}
 % \end{frame}
 
-\begin{frame}{MC12 - Data12\_8TeV update}
-\begin{itemize}
-    \item Pileup weighting tool not working with data12 distributions
-    \item $\slashed{E}_{T}$ source changed and $sin(\Delta\phi)$ dependance added
-    \item Lowest unprescaled single electron Trigger now EF\_24vhi\_medium1
-\end{itemize}
-\end{frame}
+% \begin{frame}{MC12 - Data12\_8TeV update}
+% \begin{itemize}
+%     \item Pileup weighting tool not working with data12 distributions
+%     \item $\slashed{E}_{T}$ source changed and $sin(\Delta\phi)$ dependance added
+%     \item Lowest unprescaled single electron Trigger now EF\_24vhi\_medium1
+% \end{itemize}
+% \end{frame}
 
-\begin{frame}{Reconstruction}
-Select $t\bar{t}$ using a $\chi^2$ with knowledge of the top system-
-
-\begin{equation}\begin{split}
-  \chi^2 &= \frac{\left(M_{ab} - M_W\right)^2}{\sigma^2_{M_{W_h}}} + \frac{\left(M_{abc} - M_t\right)^2}{\sigma^2_{M_{t_h}}} + \frac{\left(M_{dl\nu} - M_t\right)^2}{\sigma^2_{M_{t_l}}} \\
-  &-2\ln{\frac{L_{W}\left( \omega_{a},\omega_{b} \right)}{f^{\text{max}}_{a} f^{\text{max}}_{b}}} -2\ln{\frac{f\left(\omega_{c} \big| b\right)}{f^{\text{max}}_{c}}} -2\ln{\frac{f\left(\omega_{d} \big| b\right)}{f^{\text{max}}_{d}}}
-\end{split}\end{equation}
-With $f^{\text{max}}_j = \max\left[f\left(\omega_{j} \big| l\right), f\left(\omega_{j} \big| c\right), f\left(\omega_{j} \big| b\right)\right]$
-
-$f\left( \omega_{j} \big| F\right)$ is a Kernal Density Estimator parameterising the b-tagger response to flavour $F$ evaluated with the weight from jet $j$.
-\end{frame}
-
-\begin{frame}{Significance measure}
-Optimise $\chi^2$ cut using discovery significance.
-
-Search consists of two measurements, $n$ events pass search region cuts, $m$ events enter control region.
-
-Model parameters as Poisson variables with expectations;
-\begin{eqnarray}
-    E[n] = s^{SR} + b_{t\bar{t}} + b_{other}^{SR} \\
-    E[m] = \tau b_{t\bar{t}} + b_{other}^{CR} + s^{CR}
-\end{eqnarray}
-
-Model $log(\tau)$ as gaussian distributed with statistical error.
-\end{frame}
-
-\begin{frame}
-    Let $\beta = log\left(\tau\right)$,
-    
-    $\Delta = log\left(\Delta\right)$,
-\begin{equation}
-\begin{split}
-    -log(L) = -n log\left(b_{t\bar{t}} + b_{other}^{SR}\right) - \left(b_{t\bar{t}} + b_{other}^{SR}\right) - log\left(n!\right) \\
-              -m log\left(\tau b_{t\bar{t}} + b_{other}^{CR}\right) - \left(\tau b_{t\bar{t}} + b_{other}^{CR}\right) - log\left(m!\right) \\
-              -log \sigma_{\beta} - \frac{\left(\beta - \tilde{\beta}\right)}{2 \sigma_{\beta}^{2}}
-              -log \sigma_{\Delta} - \frac{\left(\Delta - \tilde{\Delta}\right)}{2 \sigma_{\Delta}^{2}}
-\end{split}
-\end{equation}
-Minimise $-log(L)$ and compute;
-\begin{equation}
-    q_0 = -2 log\left(\frac{L(\mu=0)}{L}\right)
-\end{equation}
-with significance simply $sqrt\left(q_0\right)$
-\end{frame}
-
-\begin{frame}{Cut optimisation}
-    \begin{figure}
-      %\caption{Significance vs cut on $\chi^2$}
-      \includegraphics[scale=0.275]{img/sigcomp.png}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{Further work}
-  \begin{itemize}
-    \item Finish update to latest release/prescriptions for $8\text{TeV}$ analysis.
-    \item Test procedure over range of SUSY models
-  \end{itemize}
-\end{frame}
+% \begin{frame}{Further work}
+%   \begin{itemize}
+%     \item Finish update to latest release/prescriptions for $8\text{TeV}$ analysis.
+%     \item Test procedure over range of SUSY models
+%   \end{itemize}
+% \end{frame}
 
 %\begin{frame}{Thanks}
 %  MC event graphs rendered with MCViz (\url{MCViz.net}).
 %\end{frame}
 
-\begin{frame}{Jet pT}
-  \begin{columns}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{$e^{+}e^{-}p_{T}^{\text{jet 1}}$}
-      \includegraphics[scale=0.275]{img/Total_OS_EE_jet_lead_pt_scaled.pdf}
-    \end{figure}\end{column}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{$e^{+}e^{-}p_{T}^{\text{jet 2}}$}
-      \includegraphics[scale=0.275]{img/Total_OS_EE_jet_lead2_pt_scaled.pdf}
-    \end{figure}\end{column}
-  \end{columns}
-\end{frame}
+% \begin{frame}{Jet pT}
+%   \begin{columns}
+%     \begin{column}{0.5\textwidth}\begin{figure}
+%       \includegraphics[scale=0.325]{img/Total_OS_EE_jet_lead_pt_scaled.pdf}
+%       \caption{$e^{+}e^{-}p_{T}^{\text{jet 1}}$}
+%     \end{figure}\end{column}
+%     \begin{column}{0.5\textwidth}\begin{figure}
+%       \includegraphics[scale=0.325]{img/Total_OS_EE_jet_lead2_pt_scaled.pdf}
+%       \caption{$e^{+}e^{-}p_{T}^{\text{jet 2}}$}
+%     \end{figure}\end{column}
+%   \end{columns}
+% \end{frame}
 
-\begin{frame}{Effective mass}
-  \begin{columns}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{$e^{+}e^{-}\slashed{E}_{T}$}
-      \includegraphics[scale=0.275]{img/Total_OS_EE_meff_scaled.pdf}
-    \end{figure}\end{column}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{$\mu^{+}\mu^{-}\slashed{E}_{T}$}
-      \includegraphics[scale=0.275]{img/Total_OS_MM_meff_scaled.pdf}
-    \end{figure}\end{column}
-  \end{columns}
-\end{frame}
+% \begin{frame}{Effective mass}
+%   \begin{columns}
+%     \begin{column}{0.5\textwidth}\begin{figure}
+%       \includegraphics[scale=0.325]{img/Total_OS_EE_meff_scaled.pdf}
+%       \caption{$e^{+}e^{-}\slashed{E}_{T}$}
+%     \end{figure}\end{column}
+%     \begin{column}{0.5\textwidth}\begin{figure}
+%       \includegraphics[scale=0.325]{img/Total_OS_MM_meff_scaled.pdf}
+%       \caption{$\mu^{+}\mu^{-}\slashed{E}_{T}$}
+%     \end{figure}\end{column}
+%   \end{columns}
+% \end{frame}
 
-\begin{frame}{Missing ET}
-  \begin{columns}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{$e^{+}e^{-}\slashed{E}_{T}$}
-      \includegraphics[scale=0.275]{img/Total_OS_EE_etmiss_scaled.pdf}
-    \end{figure}\end{column}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{$\mu^{+}\mu^{-}\slashed{E}_{T}$}
-      \includegraphics[scale=0.275]{img/Total_OS_MM_etmiss_scaled.pdf}
-    \end{figure}\end{column}
-  \end{columns}
-\end{frame}
+% \begin{frame}{Missing ET}
+%   \begin{columns}
+%     \begin{column}{0.5\textwidth}\begin{figure}
+%       \caption{$e^{+}e^{-}\slashed{E}_{T}$}
+%       \includegraphics[scale=0.325]{img/Total_OS_EE_etmiss_scaled.pdf}
+%     \end{figure}\end{column}
+%     \begin{column}{0.5\textwidth}\begin{figure}
+%       \caption{$\mu^{+}\mu^{-}\slashed{E}_{T}$}
+%       \includegraphics[scale=0.325]{img/Total_OS_MM_etmiss_scaled.pdf}
+%     \end{figure}\end{column}
+%   \end{columns}
+% \end{frame}
 
-\begin{frame}{Effective mass - different flavour}
-  \begin{columns}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{$e^{\pm}\mu^{\mp}\slashed{E}_{T}$}
-      \includegraphics[scale=0.275]{img/Total_OS_EM_meff_scaled.pdf}
-    \end{figure}\end{column}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{$\mu^{\pm}e^{\mp}\slashed{E}_{T}$}
-      \includegraphics[scale=0.275]{img/Total_OS_ME_meff_scaled.pdf}
-    \end{figure}\end{column}
-  \end{columns}
-\end{frame}
+% \begin{frame}{Effective mass - different flavour}
+%   \begin{columns}
+%     \begin{column}{0.5\textwidth}\begin{figure}
+%       \caption{$e^{\pm}\mu^{\mp}\slashed{E}_{T}$}
+%       \includegraphics[scale=0.325]{img/Total_OS_EM_meff_scaled.pdf}
+%     \end{figure}\end{column}
+%     \begin{column}{0.5\textwidth}\begin{figure}
+%       \caption{$\mu^{\pm}e^{\mp}\slashed{E}_{T}$}
+%       \includegraphics[scale=0.325]{img/Total_OS_ME_meff_scaled.pdf}
+%     \end{figure}\end{column}
+%   \end{columns}
+% \end{frame}
 
-\begin{frame}{Missing ET - different flavour}
-  \begin{columns}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{$e^{\pm}\mu^{\mp}\slashed{E}_{T}$}
-      \includegraphics[scale=0.275]{img/Total_OS_EM_etmiss_scaled.pdf}
-    \end{figure}\end{column}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{$\mu^{\pm}e^{\mp}\slashed{E}_{T}$}
-      \includegraphics[scale=0.275]{img/Total_OS_ME_etmiss_scaled.pdf}
-    \end{figure}\end{column}
-  \end{columns}
-\end{frame}
+% \begin{frame}{Missing ET - different flavour}
+%   \begin{columns}
+%     \begin{column}{0.5\textwidth}\begin{figure}
+%       \caption{$e^{\pm}\mu^{\mp}\slashed{E}_{T}$}
+%       \includegraphics[scale=0.325]{img/Total_OS_EM_etmiss_scaled.pdf}
+%     \end{figure}\end{column}
+%     \begin{column}{0.5\textwidth}\begin{figure}
+%       \caption{$\mu^{\pm}e^{\mp}\slashed{E}_{T}$}
+%       \includegraphics[scale=0.325]{img/Total_OS_ME_etmiss_scaled.pdf}
+%     \end{figure}\end{column}
+%   \end{columns}
+% \end{frame}
 
-\begin{frame}{Jet pT - different flavour}
-  \begin{columns}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{$e^{\pm}\mu^{\mp}p_{T}^{\text{jet 1}}$}
-      \includegraphics[scale=0.275]{img/Total_OS_EM_jet_lead_pt_scaled.pdf}
-    \end{figure}\end{column}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{$e^{\pm}\mu^{\mp}p_{T}^{\text{jet 2}}$}
-      \includegraphics[scale=0.275]{img/Total_OS_EM_jet_lead2_pt_scaled.pdf}
-    \end{figure}\end{column}
-  \end{columns}
-\end{frame}
+% \begin{frame}{Jet pT - different flavour}
+%   \begin{columns}
+%     \begin{column}{0.5\textwidth}\begin{figure}
+%       \caption{$e^{\pm}\mu^{\mp}p_{T}^{\text{jet 1}}$}
+%       \includegraphics[scale=0.325]{img/Total_OS_EM_jet_lead_pt_scaled.pdf}
+%     \end{figure}\end{column}
+%     \begin{column}{0.5\textwidth}\begin{figure}
+%       \caption{$e^{\pm}\mu^{\mp}p_{T}^{\text{jet 2}}$}
+%       \includegraphics[scale=0.325]{img/Total_OS_EM_jet_lead2_pt_scaled.pdf}
+%     \end{figure}\end{column}
+%   \end{columns}
+% \end{frame}
 
-\begin{frame}{Jet pT - different flavour}
-  \begin{columns}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{$\mu{\pm}e^{\mp}p_{T}^{\text{jet 1}}$}
-      \includegraphics[scale=0.275]{img/Total_OS_ME_jet_lead_pt_scaled.pdf}
-    \end{figure}\end{column}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{$\mu{\pm}e^{\mp}p_{T}^{\text{jet 2}}$}
-      \includegraphics[scale=0.275]{img/Total_OS_ME_jet_lead2_pt_scaled.pdf}
-    \end{figure}\end{column}
-  \end{columns}
-\end{frame}
+% \begin{frame}{Jet pT - different flavour}
+%   \begin{columns}
+%     \begin{column}{0.5\textwidth}\begin{figure}
+%       \caption{$\mu{\pm}e^{\mp}p_{T}^{\text{jet 1}}$}
+%       \includegraphics[scale=0.325]{img/Total_OS_ME_jet_lead_pt_scaled.pdf}
+%     \end{figure}\end{column}
+%     \begin{column}{0.5\textwidth}\begin{figure}
+%       \caption{$\mu{\pm}e^{\mp}p_{T}^{\text{jet 2}}$}
+%       \includegraphics[scale=0.325]{img/Total_OS_ME_jet_lead2_pt_scaled.pdf}
+%     \end{figure}\end{column}
+%   \end{columns}
+% \end{frame}
 
-\begin{frame}{Jet pT - muons}
-  \begin{columns}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{$\mu^{+}\mu^{-}p_{T}^{\text{jet 1}}$}
-      \includegraphics[scale=0.275]{img/Total_OS_MM_jet_lead_pt_scaled.pdf}
-    \end{figure}\end{column}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{$\mu^{+}\mu^{-}p_{T}^{\text{jet 2}}$}
-      \includegraphics[scale=0.275]{img/Total_OS_MM_jet_lead2_pt_scaled.pdf}
-    \end{figure}\end{column}
-  \end{columns}
-\end{frame}
+% \begin{frame}{Jet pT - muons}
+%   \begin{columns}
+%     \begin{column}{0.5\textwidth}\begin{figure}
+%       \caption{$\mu^{+}\mu^{-}p_{T}^{\text{jet 1}}$}
+%       \includegraphics[scale=0.325]{img/Total_OS_MM_jet_lead_pt_scaled.pdf}
+%     \end{figure}\end{column}
+%     \begin{column}{0.5\textwidth}\begin{figure}
+%       \caption{$\mu^{+}\mu^{-}p_{T}^{\text{jet 2}}$}
+%       \includegraphics[scale=0.325]{img/Total_OS_MM_jet_lead2_pt_scaled.pdf}
+%     \end{figure}\end{column}
+%   \end{columns}
+% \end{frame}
 
-\begin{frame}{KDE parameterisation}
-  \begin{columns}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{b-tag distributions}
-      \includegraphics[scale=0.275]{img/tagging.pdf}
-    \end{figure}\end{column}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{b-tag distributions}
-      \includegraphics[scale=0.275]{img/logtagging.pdf}
-    \end{figure}\end{column}
-  \end{columns}
-\end{frame}
-
-\begin{frame}{Partial Chisquare distributions}
-  \begin{columns}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{$\chi^2_{kinematic}$}
-      \includegraphics[scale=0.275]{img/Total__min_chi_kin_all4.pdf}
-    \end{figure}\end{column}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{$\chi^2_{B}$}
-      \includegraphics[scale=0.275]{img/Total__min_chi_B_all4.pdf}
-    \end{figure}\end{column}
-  \end{columns}
-\end{frame}
-
-\begin{frame}{Total Chisquare distribution}
-  \begin{columns}
-    \begin{column}{0.45\textwidth}\begin{figure}
-      \caption{$\chi^2$ = $\chi^2_{kinematic} + \chi^2_{B}$}
-      \includegraphics[scale=0.275]{img/Total__min_chi_all_all4.pdf}
-    \end{figure}\end{column}
-  \end{columns}
-\end{frame}
+% \begin{frame}{Partial Chisquare distributions}
+%   \begin{columns}
+%     \begin{column}{0.5\textwidth}\begin{figure}
+%       \caption{$\chi^2_{kinematic}$}
+%       \includegraphics[scale=0.325]{img/Total__min_chi_kin_all4.pdf}
+%     \end{figure}\end{column}
+%     \begin{column}{0.5\textwidth}\begin{figure}
+%       \caption{$\chi^2_{B}$}
+%       \includegraphics[scale=0.325]{img/Total__min_chi_B_all4.pdf}
+%     \end{figure}\end{column}
+%   \end{columns}
+% \end{frame}
 
 \end{document}
