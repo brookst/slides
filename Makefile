@@ -16,6 +16,8 @@ img_src_dir = img_src
 TEX         = pdflatex -halt-on-error -file-line-error
 img  = $(patsubst $(img_src_dir)/%.svg, $(img_dir)/%.pdf, $(wildcard $(img_src_dir)/*.svg))
 img += $(patsubst $(img_src_dir)/%.eps, $(img_dir)/%.pdf, $(wildcard $(img_src_dir)/*.eps))
+img += $(patsubst $(img_src_dir)/%.png, $(img_dir)/%.png, $(wildcard $(img_src_dir)/*.png))
+img += $(patsubst $(img_src_dir)/%.jpg, $(img_dir)/%.jpg, $(wildcard $(img_src_dir)/*.jpg))
 
 all: $(pdffile).pdf
 
@@ -33,6 +35,12 @@ $(img_dir)/%.pdf: $(img_src_dir)/%.svg | $(img_dir)
 
 $(img_dir)/%.pdf: $(img_src_dir)/%.eps | $(img_dir)
 	epstopdf $< -o $@
+
+$(img_dir)/%.png: $(img_src_dir)/%.png | $(img_dir)
+	ln -s ../$< $@
+
+$(img_dir)/%.jpg: $(img_src_dir)/%.jpg | $(img_dir)
+	ln -s ../$< $@
 
 $(img_dir):
 	mkdir -p $(img_dir)
