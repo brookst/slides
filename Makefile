@@ -27,7 +27,7 @@ $(pdffile).pdf: $(latexfile).aux
         done
 	mv $(latexfile).pdf $(pdffile).pdf
 
-$(latexfile).aux: $(img) $(latexfile).tex
+$(latexfile).aux: $(img) $(latexfile).tex *.tex
 	$(TEX) $(latexfile)
 
 $(img_dir)/%.pdf: $(img_src_dir)/%.svg | $(img_dir)
