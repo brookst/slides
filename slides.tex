@@ -1,20 +1,30 @@
-\documentclass{beamer}
+\documentclass[9pt]{beamer}
 \usepackage{pdfpages}
 \usepackage{caption}
+\usepackage{fixltx2e}
+% \usepackage{colortbl}
 % \usepackage{subcaption}
 \usepackage{slashed}
 \usepackage{tikz}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
 \usetheme{Luebeck}
 \definecolor{cern}{RGB}{0,83,161}
  \setbeamercolor*{palette primary}{use=structure,fg=white,bg=cern}
 \setlength{\parskip}{2.5mm}
+\setbeamercolor{block title}{bg=cern}
+\newenvironment{terminalblock}[1]{%
+  \setbeamercolor{block body}{bg=black, fg=white}
+  \begin{block}{#1}}{\end{block}}
+
 \title[Beamline for Schools\hspace{2em}\insertframenumber/
-\inserttotalframenumber]{Beamline for Schools project update}
+\inserttotalframenumber]{Beamline for Schools\\DAQ and shift responsibilities}
 \author{\emph{Tim Brooks}}
 \institute{CERN / RHUL}
-\date{12/8/15}
+\date{2015-09-12}
 
 \begin{document}
+\setbeamertemplate{caption}{\centering\insertcaption\par}
 
 \begin{frame}
 \titlepage{}
@@ -24,27 +34,309 @@
 \includegraphics[scale=0.049]{img/RHUL}
 \end{frame}
 
-\section{BL4S}
+
+\begin{frame}{T9 facilities}
+\begin{columns}
+  \begin{column}{.4\textwidth}
+    \vspace*{-0.5cm}
+    \begin{figure}\includegraphics[scale=0.17]{img/Barrack}\vspace*{-0.2cm}\caption{T9 control room}\end{figure}\vspace*{-1cm}
+  \end{column}
+  \begin{column}{.4\textwidth}
+    \vspace*{-0.5cm}
+    \begin{figure}\includegraphics[scale=0.17]{img/PAD}\vspace*{-0.2cm}\caption{T9 experiment zone access door}\end{figure}\vspace*{-1cm}
+  \end{column}
+\end{columns}
+\end{frame}
 
 \begin{frame}{Experiment set-up}
 \begin{figure}\centering
-    \include{figure_t9}
+    % \include{figure_t9}
+    \includegraphics[scale=0.1]{img/t9_layout}
 \end{figure}
 \end{frame}
 
-\begin{frame}{Crystal undulator tasks}
-\begin{enumerate}
-    \item Crystal alignment stage - Poul from Aarhus will come out to unpack
-    \item Photon calorimeter - Simon Connell following up some leads, in contact with expert on Lead Glass calorimeters as backup
-    \item Veto scintillator - Will contact Raphael Dumps to help assemble veto scintillator element in B40
-\end{enumerate}
+\section{Detectors}
+\begin{frame}
+\begin{center}
+\begin{tabular}{|l|c|}\hline
+    Detector type & Names \\\hline
+    Cherenkov & CH0, CH1 \\
+    Scintillator & SC0, SC1, SC2 \\
+    Delay Wire Chamber & DWC0, DWC1, DWC2 \\
+    Lead Glass Calorimeter & LG0, LG1, LG2, LG3 \\
+    Bismuth Germanate Calorimeter & BGO \\
+\hline
+\end{tabular}
+\end{center}
 \end{frame}
 
-\begin{frame}{Further tasks}
-\begin{itemize}
-    \item High Voltage - Have SY2737 crate and a A1833P and N module
-    \item Cabling - Added Cabling page to twiki - have many HV cables in B40, will check what cables are in T9 area tomorrow
-\end{itemize}
+\begin{frame}{PMT threshold detectors}
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+    \vspace*{-0.2cm}
+    \begin{figure}\includegraphics[scale=0.17]{img/Scint_plastic}\vspace*{-0.2cm}\caption{Scintillating plastic}\end{figure}\vspace*{-0.5cm}
+    \begin{figure}\includegraphics[scale=0.28]{img/Light_guide}\vspace*{-0.2cm}\caption{Light guide}\end{figure}\vspace*{-0.5cm}
+    \begin{figure}\includegraphics[scale=0.29]{img/PMT}\vspace*{-0.2cm}\caption{Photo-Multiplier Tube}\end{figure}\vspace*{-0.5cm}
+    \end{column}
+    \begin{column}{.6\textwidth}
+    \vspace*{-0.5cm}
+    \begin{figure}\includegraphics[scale=0.08]{img/Scintillator}\vspace*{-0.2cm}\caption{Scintillator assembly\newline- charged particle timing}\end{figure}\vspace*{-0.5cm}
+    \begin{figure}\includegraphics[scale=0.03]{img/Cherenkov}\vspace*{-0.2cm}\caption{Cherenkov detector\newline- charged particle identification}\end{figure}\vspace*{-0.5cm}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{PMT integral detectors}
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+      \begin{itemize}
+        \item Absorb electromagnetic particles fully
+        \item Energy converted to light
+        \item PMT converts light into electrical pulse
+        \item Integrate pulse to recover the particle energy
+      \end{itemize}
+    \end{column}
+    \begin{column}{.6\textwidth}
+    \vspace*{-0.5cm}
+    \begin{figure}\includegraphics[scale=0.05]{img/Calo}\vspace*{-0.2cm}\caption{Calorimeter blocks}\end{figure}\vspace*{-1cm}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Delay wire chamber}
+  \begin{columns}
+    \begin{column}{.6\textwidth}
+    \vspace*{-0.5cm}
+    \begin{figure}\includegraphics[scale=0.05]{img/DWC}\vspace*{-0.2cm}\caption{Delay Wire Chamber (DWC0)}\end{figure}\vspace*{-1cm}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \begin{itemize}
+        \item Multi-Wire Proportional Chamber (MWPC)
+        \item Charged particles ionise gas
+        \item Two outputs per axis
+        \item Compare the timing of signals on an axis
+        \item Gives an X-Y location of hit
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Gas supply}
+  \begin{columns}
+    \begin{column}{.6\textwidth}
+    % \vspace*{-0.5cm}
+    The Delay Wire Chambers require gas to ionise
+    \vspace{0.5cm}
+
+    A supply of Argon and Carbon Dioxide (Ar + CO\textsubscript{2}) is provided from a distribution panel behind the beam control room
+    \vspace{0.5cm}
+
+    The Cherenkov detectors may be filled with Nitrogen or CO\textsubscript{2}
+    \vspace{0.5cm}
+
+    They can also be evacuated by vacuum pumps
+    \end{column}
+    \begin{column}{.4\textwidth}
+    \vspace*{-0.5cm}
+    \begin{figure}\includegraphics[scale=0.05]{img/Cherenkov_gas_control}\vspace*{-0.2cm}\caption{Cherenkov gas panel}\end{figure}\vspace*{-1cm}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Power supply}
+  \begin{columns}
+    \begin{column}{.6\textwidth}
+    \vspace*{-0.5cm}
+    \begin{figure}\includegraphics[scale=0.04]{img/HV}\vspace*{-0.2cm}\caption{HV crate and modules}\end{figure}\vspace*{-1cm}
+    \end{column}
+    \begin{column}{.4\textwidth}
+    \vspace*{-0.5cm}
+    \begin{itemize}
+        \item Modular power supply unit
+        \item Rack mount 'crate' holds modules, provides power and controls output
+        \item Modules:
+        \begin{itemize}
+            \item A1833P 12 channels, $4\,\mathrm{kV}$ positive, $2\,\mathrm{mA}$
+            \item A1833N negative voltage version of above
+        \end{itemize}
+        \item Modules monitor voltage and current usage, tripping off in case of problems
+    \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\section{Readout Electronics}
+\begin{frame}{Analog electronics: NIM}
+  \begin{columns}
+    \begin{column}{.4\textwidth}
+    \vspace*{-0.5cm}
+    \begin{itemize}
+        \item Nuclear Instrumentation Module (NIM)
+        \item Modular standard for analog electronic components
+        \item Rack mount 'bin' holds modules and provides power
+        \item Modules:
+        \begin{itemize}
+            \item Amplifier
+            \item Fan-in (logical OR), Fan-out
+            \item Discriminator
+            \item Coincidence (logical AND)
+            \item Timer
+            \item Counter
+        \end{itemize}
+    \end{itemize}
+    \end{column}
+    \begin{column}{.6\textwidth}
+    \vspace*{-0.5cm}
+    \begin{figure}\includegraphics[scale=0.04]{img/NIM}\vspace*{-0.2cm}\caption{NIM bin and modules}\end{figure}\vspace*{-1cm}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Analog electronics: NIM}
+  \begin{block}{Discriminator}
+    A discriminator has two settings; a 'Threshold' and a 'Width'
+
+    Noise with a voltage below the Threshold is ignored
+
+    If the input signal crosses the Threshold, a pulse is generated with the desired Width
+  \end{block}
+  \begin{block}{Coincidence module}
+    Many pulses are not interesting but if two detectors see a signal at the same time, there may be something interesting
+
+    A coincidence is the logical AND of some signals
+
+    If we use inverted signals, we can 'Veto' a certain detector
+  \end{block}
+\end{frame}
+
+\begin{frame}{Trigger}
+  \begin{itemize}
+    \item We will generate too much data to store everything
+    \item Particles will cross the detector in a few nano-seconds
+    \item A trigger is needed to only record interesting 'Events'
+    \item By combining signals from the detectors we can detect a particles 'Signature' and begin recording
+    \item Big experiments have higher level triggers that look in more and more detail at the data before keeping or rejecting events
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Digitisation: VME}
+  \begin{columns}
+    \begin{column}{.6\textwidth}
+    \vspace*{-0.5cm}
+    \begin{figure}\includegraphics[scale=0.04]{img/VME}\vspace*{-0.2cm}\caption{VME crate and modules}\end{figure}\vspace*{-1cm}
+    \end{column}
+    \begin{column}{.4\textwidth}
+    \vspace*{-0.5cm}
+    \begin{itemize}
+        \item Versa Module Europa
+        \item Originally designed for Motorola 68k computers
+        \item Rack mount 'crate' holds modules, provides power and hosts a data bus
+        \item Modules:
+          \begin{itemize}
+            \item Scaler/Counter
+            \item Analog to Digital converter (ADC)
+            \item Charge to Digital converter (QDC)
+            \item Time to Digital converter (TDC)
+          \end{itemize}
+    \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Digitisation: VME}
+  \begin{block}{V560 Scaler}
+    \begin{itemize}
+      \item Counts pulses from the NIM apparatus
+      \item Gives the Rate for threshold detectors
+      \item Records coincidences, triggers
+      \item Labels events coming from the same spill
+    \end{itemize}
+  \end{block}
+  \begin{block}{V785 ADC}
+    \begin{itemize}
+      \item Measures the Peak voltage of its input
+      \item Considers pulses in a window of time - 'gated'
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Digitisation: VME}
+  \begin{block}{V792 QDC}
+  \begin{itemize}
+    \item Measures the Peak voltage of its input
+    \item Considers pulses in a window of time - 'gated'
+  \end{itemize}
+\end{block}
+\begin{block}{V1290 TDC}
+  \begin{itemize}
+    \item Records leading edge of signal
+    \item Also saves additional leading edges if a second signal is close by
+    \item $25\,\mathrm{ps}$ time resolution ($25\times10^{-12}$!)
+    \item Can save up to a microsecond before and after the trigger
+  \end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Single board computer}
+  \begin{itemize}
+    \item Bus master - controls the other modules
+    \item Complete computer in a module
+    \item 2GHz Intel Core i7 processor
+    \item 4GB of RAM
+    \item Laptop size hard drive
+  \end{itemize}
+\end{frame}
+
+\section{Software}
+\begin{frame}[fragile]{High voltage control}
+The HV panel can be opened from a desktop icon on the control room PCs
+\setbeamerfont{block body}{size=\tiny}
+\setbeamerfont{block title}{size=\large}
+\begin{terminalblock}{BL4S-HV-01}
+\tiny
+\vspace*{-0.5cm}
+\begin{verbatim}
+ -  Main  Utility  Setup  Groups  View                                    Admin 
+ Group 00                                                                       
+ Channel Name  V0Set     I0Set     VMon      IMon      Pw  Status           Ch# 
+ ─────────────┬─────────────────────────────────────────────────────────┬────────
+ DWC1         │2850.00 V 100.00 uA    0.00 V   0.00 uA Off  Ext-Dis     │00.0000 
+ DWC2         │2850.00 V 100.00 uA    0.00 V   0.00 uA Off  Ext-Dis     │00.0001 
+ BGO          │ 480.00 V 150.00 uA    0.00 V   0.00 uA Off  Ext-Dis     │00.0002 
+ -03          │   0.00 V  20.00 uA    0.00 V   0.00 uA Off  Ext-Dis     │00.0003 
+ -04          │   0.00 V  20.00 uA    0.00 V   0.00 uA Off  Ext-Dis     │00.0004 
+ -05          │   0.00 V  20.00 uA    0.00 V   0.00 uA Off  Ext-Dis     │00.0005 
+ -06          │   0.00 V  20.00 uA    0.00 V   0.00 uA Off  Ext-Dis     │00.0006 
+ -07          │   0.00 V  20.00 uA    0.00 V   0.00 uA Off  Ext-Dis     │00.0007 
+ -08          │   0.00 V  20.00 uA    0.00 V   0.00 uA Off  Ext-Dis     │00.0008 
+ -09          │   0.00 V  20.00 uA    0.00 V   0.00 uA Off  Ext-Dis     │00.0009 
+ -10          │   0.00 V  20.00 uA    0.00 V   0.00 uA Off  Ext-Dis     │00.0010 
+ -11          │   0.00 V  20.00 uA    0.00 V   0.00 uA Off  Ext-Dis     │00.0011 
+ LG00         │1062.00 V  500.0 uA    0.00 V    0.0 uA Off  Ext-Dis     │01.0000 
+ LG08         │1208.00 V  500.0 uA    0.00 V    0.0 uA Off  Ext-Dis     │01.0001 
+ LG03         │1151.00 V  500.0 uA    0.00 V    0.0 uA Off  Ext-Dis     │01.0002 
+ LG04         │1090.00 V  500.0 uA    0.00 V    0.0 uA Off  Ext-Dis     │01.0003 
+ CH0          │2000.00 V 1500.0 uA    0.00 V    0.0 uA Off  Ext-Dis     │01.0004 
+ CH1          │2000.00 V 1500.0 uA    0.25 V    0.0 uA Off  Ext-Dis     │01.0005 
+ SC1          │1800.00 V 1500.0 uA    0.25 V    0.0 uA Off  Ext-Dis     │01.0006 
+ Channels Display/Edit Screen                   LocEn V0 I0     N  │ CAEN SY2527 
+\end{verbatim}
+\end{terminalblock}
+\end{frame}
+
+\begin{frame}{Data Acquisition software}
+\vspace*{-1cm}
+\begin{figure}\includegraphics[scale=0.24]{img/DAQ_absent}\vspace*{-0.2cm}\caption{ATLAS DAQ software}\end{figure}\vspace*{-1cm}
+\end{frame}
+
+\begin{frame}{Data Acquisition software}
+\vspace*{-1cm}
+\begin{figure}\includegraphics[scale=0.24]{img/DAQ_running}\vspace*{-0.2cm}\caption{ATLAS DAQ software}\end{figure}\vspace*{-1cm}
+\end{frame}
+
+\begin{frame}{Monitoring software}
+\vspace*{-0.5cm}
+\begin{figure}\includegraphics[scale=0.22]{img/Monitoring}\vspace*{-0.2cm}\caption{Online Histogram Presenter (OHP)}\end{figure}\vspace*{-1cm}
 \end{frame}
 
 \end{document}
