@@ -58,6 +58,8 @@
 \section{Detectors}
 \begin{frame}
 \begin{center}
+We {\tiny(ab)}use acronyms to refer to detector elements:
+
 \begin{tabular}{|l|c|}\hline
     Detector type & Names \\\hline
     Cherenkov & CH0, CH1 \\
@@ -113,6 +115,7 @@
       \begin{itemize}
         \item Multi-Wire Proportional Chamber (MWPC)
         \item Charged particles ionise gas
+        \item On board 'Front-end' electronics
         \item Two outputs per axis
         \item Compare the timing of signals on an axis
         \item Gives an X-Y location of hit
@@ -161,6 +164,7 @@
         \end{itemize}
         \item Modules monitor voltage and current usage, tripping off in case of problems
     \end{itemize}
+        The Delay Wire Chamber also needs low voltage power from a bench top power supply
     \end{column}
   \end{columns}
 \end{frame}
@@ -179,7 +183,7 @@
             \item Amplifier
             \item Fan-in (logical OR), Fan-out
             \item Discriminator
-            \item Coincidence (logical AND)
+            \item Coincidence\newline(logical AND)
             \item Timer
             \item Counter
         \end{itemize}
@@ -263,8 +267,8 @@
 \begin{frame}{Digitisation: VME}
   \begin{block}{V792 QDC}
   \begin{itemize}
-    \item Measures the Peak voltage of its input
-    \item Considers pulses in a window of time - 'gated'
+    \item Integrates charges in gate window
+    \item Internal 'Pedestal' current must be calibrated
   \end{itemize}
 \end{block}
 \begin{block}{V1290 TDC}
@@ -277,13 +281,33 @@
 \end{block}
 \end{frame}
 
-\begin{frame}{Single board computer}
+\begin{frame}{Digitisation: VME}
+\begin{block}{CORBO trigger module}
+  \begin{itemize}
+    \item Receives trigger to start recording
+    \item Sends a busy signal to prevent subsequent triggers
+    \item Signals computer to start readout
+  \end{itemize}
+\end{block}
+\begin{block}{Single board computer}
   \begin{itemize}
     \item Bus master - controls the other modules
     \item Complete computer in a module
     \item 2GHz Intel Core i7 processor
     \item 4GB of RAM
     \item Laptop size hard drive
+  \end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Deadtime}
+  \begin{itemize}
+    \item Electronics take time to digitize signals
+    \item We can't generate any signals while the digitizers are busy
+    \item Veto triggers using the busy output
+    \item The period while the DAQ is busy is the 'Deadtime'
+    \item Typically we take $100\,\mathrm{\mu s}$ to readout
+    \item Our trigger has to be careful to pick the best events
   \end{itemize}
 \end{frame}
 
@@ -337,6 +361,49 @@ The HV panel can be opened from a desktop icon on the control room PCs
 \begin{frame}{Monitoring software}
 \vspace*{-0.5cm}
 \begin{figure}\includegraphics[scale=0.22]{img/Monitoring}\vspace*{-0.2cm}\caption{Online Histogram Presenter (OHP)}\end{figure}\vspace*{-1cm}
+\end{frame}
+
+\begin{frame}{Log book}
+\vspace*{-1cm}
+\begin{figure}\includegraphics[scale=0.24]{img/Log_book}\vspace*{-0.2cm}\caption{BL4S online log book - it's only science if you write it down!}\end{figure}\vspace*{-1cm}
+\end{frame}
+
+\begin{frame}{Shift tasks}
+\begin{enumerate}
+\item Check run plan - online whiteboard
+\item Check detector set-up - access:
+    \begin{itemize}
+        \item HV must be disabled
+        \item Magnet switched off
+        \item Shift leader will check the zone first
+        \item All shifters can then key into the zone
+    \end{itemize}
+    \item Ensure HV (and LV) is on
+    \item Collect calibration data - pedestal programs
+    \item Check run settings before starting to record
+    \item Check monitoring histograms
+    \item Write a log entry when:
+    \begin{itemize}
+      \item Changing settings
+      \item Starting/stopping a run
+      \item Ending your shift
+    \end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Help}
+  \begin{enumerate}
+    \item Pay attention and ask questions in the morning meeting
+    \item Check the log book - some problems may be known already \url{http://espace.cern.ch/project-blfs/bl4s-elog-2015/}
+    \item Documentation is available on our twiki: \url{http://twiki.cern.ch/twiki/bin/view/BL4S}
+    \item If you're unsure - ask your shift leader
+    \item Contacts:
+    \begin{itemize}
+      \item Markus Joos (160663)
+      \item Tim Brooks (167969)
+      \item Candan Dozen (167970)
+    \end{itemize}
+  \end{enumerate}
 \end{frame}
 
 \end{document}
